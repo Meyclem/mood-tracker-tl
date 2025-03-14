@@ -9,7 +9,13 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { UserCircle, Home, PlusCircle, BarChart, Calendar } from "lucide-react";
+import {
+  UserCircle,
+  Home,
+  PlusCircle,
+  Calendar,
+  CalendarDays,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function DashboardNavbar() {
@@ -39,6 +45,13 @@ export default function DashboardNavbar() {
               Weekly View
             </Link>
             <Link
+              href="/dashboard/monthly"
+              className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900"
+            >
+              <CalendarDays className="h-4 w-4" />
+              Monthly View
+            </Link>
+            <Link
               href="/dashboard/mood"
               className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900"
             >
@@ -66,6 +79,9 @@ export default function DashboardNavbar() {
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/dashboard/weekly">Weekly View</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/dashboard/monthly">Monthly View</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/dashboard/mood">Add Mood</Link>

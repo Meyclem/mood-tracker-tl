@@ -1,5 +1,11 @@
 import DashboardNavbar from "@/components/dashboard-navbar";
-import { InfoIcon, UserCircle, PlusCircle, Calendar } from "lucide-react";
+import {
+  InfoIcon,
+  UserCircle,
+  PlusCircle,
+  Calendar,
+  CalendarDays,
+} from "lucide-react";
 import { redirect } from "next/navigation";
 import { createClient } from "../../../supabase/server";
 import Link from "next/link";
@@ -38,12 +44,20 @@ export default async function Dashboard() {
               </p>
             </div>
             <div className="flex gap-2">
-              <Link href="/dashboard/weekly">
-                <Button variant="outline" size="lg" className="gap-2">
-                  <Calendar className="h-5 w-5" />
-                  Weekly View
-                </Button>
-              </Link>
+              <div className="flex gap-2">
+                <Link href="/dashboard/weekly">
+                  <Button variant="outline" size="lg" className="gap-2">
+                    <Calendar className="h-5 w-5" />
+                    Weekly View
+                  </Button>
+                </Link>
+                <Link href="/dashboard/monthly">
+                  <Button variant="outline" size="lg" className="gap-2">
+                    <CalendarDays className="h-5 w-5" />
+                    Monthly View
+                  </Button>
+                </Link>
+              </div>
               <Link href="/dashboard/mood">
                 <Button size="lg" className="gap-2">
                   <PlusCircle className="h-5 w-5" />
